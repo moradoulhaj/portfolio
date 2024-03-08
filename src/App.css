@@ -1,0 +1,35 @@
+#root {
+  max-width: 1280px;
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+}
+body #home {
+  /* background: #20374b; */
+  background-image: url("./assets/bg.jpg");
+  backgroundColor: "rgb(255, 255, 255, 0.5)";
+  height:100vh;
+  
+}
+
+.myButton {
+  border-radius: 9999px;
+  padding-left: 16px /* 16px */;
+  padding-right: 16px /* 16px */;
+  padding-top: 0.5rem /* 8px */;
+  padding-bottom: 0.5rem /* 8px */;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  background: #fcc11e;
+  margin-top: 20px /* 20px */;
+}
+.myButton:hover {
+  background: #ffe2b3; /* New background color on hover */
+  color: #20374b; /* New text color on hover */
+}
+.myImage {
+  width: 1832px;
+  height: 1578px;
+  overflow: hidden;
+}
