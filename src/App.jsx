@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import "./App.css";
 import { useEffect } from "react";
 import Aos from "aos";
+import Footer from "./components/Footer";
 
 export default function App() {
   useEffect(() => { 
@@ -10,6 +11,7 @@ export default function App() {
   return (
     <div className="container">
       <Header />
+      <Footer />
     </div>
   );
 }
