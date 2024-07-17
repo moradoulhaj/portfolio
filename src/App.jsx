@@ -5,6 +5,7 @@ import Aos from "aos";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
+import Contact from "./components/Contact";
 
 export default function App() {
   useEffect(() => {
@@ -15,7 +16,9 @@ export default function App() {
       <Header />
       <main>
         <Hero />
+
         <Services />
+        <Contact/>
       </main>
 
       <Footer />
