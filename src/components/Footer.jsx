@@ -17,7 +17,7 @@ function Footer() {
             </h2>
             <a href="#contact">
               <button className="bg-primary text-white font-[500] flex items-center gap-2 hover:bg-txt py-2 px-4 rounded-[8px] ease-in duration-300">
-                <i class="ri-mail-line"></i>Hire me
+                <i className="ri-mail-line"></i>Hire me
               </button>
             </a>
           </div>
@@ -32,22 +32,22 @@ function Footer() {
               </span>
               <span className="w-[35px] h-[35px] cursor-pointer bg-[#2b2d33] p-1 rounded-[50px] text-center">
                 <a href="" className="text-gray-300 font-[500] text-[18px]">
-                  <i class="ri-linkedin-fill"></i>
+                  <i className="ri-linkedin-fill"></i>
                 </a>
               </span>
               <span className="w-[35px] bg-[#2b2d33] h-[35px] cursor-pointer p-1 rounded-[50px] text-center">
                 <a href="" className="text-gray-300 font-[500] text-[18px]">
-                  <i class="ri-github-fill"></i>
+                  <i className="ri-github-fill"></i>
                 </a>
               </span>
               <span className="w-[35px] h-[35px] bg-[#2b2d33] cursor-pointer p-1 rounded-[50px] text-center">
                 <a href="" className="text-gray-300 font-[500] text-[18px]">
-                  <i class="ri-telegram-fill"></i>
+                  <i className="ri-telegram-fill"></i>
                 </a>
               </span>
               <span className="w-[35px] h-[35px] bg-[#2b2d33] cursor-pointer p-1 rounded-[50px] text-center">
                 <a href="" className="text-gray-300 font-[500] text-[18px]">
-                  <i class="ri-instagram-fill"></i>
+                  <i className="ri-instagram-fill"></i>
                 </a>
               </span>
             </div>

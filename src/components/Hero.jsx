@@ -30,7 +30,7 @@ function Hero() {
             >
               <a href="#contact">
                 <button className="bg-primary text-white font-[500] flex items-center gap-2 hover:bg-txt py-2 px-4 rounded-[8px] ease-in duration-300">
-                  <i class="ri-mail-line"></i>Hire me
+                  <i className="ri-mail-line"></i>Hire me
                 </button>
               </a>
               <a
@@ -46,7 +46,7 @@ function Hero() {
               className="flex text-secondary text-[15px] gap-2 mt-14 font-[500] sm:pl-14 sm:pr-10 leading-7"
             >
               <span>
-                <i class="ri-apps-2-line"></i>
+                <i className="ri-apps-2-line"></i>
               </span>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -58,22 +58,22 @@ function Hero() {
               </span>
               <span>
                 <a href="text-[18px] font-[600] text-txt">
-                  <i class="ri-linkedin-fill"></i>
+                  <i className="ri-linkedin-fill"></i>
                 </a>
               </span>
               <span>
                 <a href="text-[18px] font-[600] text-txt">
-                  <i class="ri-github-fill"></i>
+                  <i className="ri-github-fill"></i>
                 </a>
               </span>
               <span>
                 <a href="text-[18px] font-[600] text-txt">
-                  <i class="ri-telegram-fill"></i>
+                  <i className="ri-telegram-fill"></i>
                 </a>
               </span>
               <span>
                 <a href="text-[18px] font-[600] text-txt">
-                  <i class="ri-instagram-fill"></i>
+                  <i className="ri-instagram-fill"></i>
                 </a>
               </span>
               {/* -----------------------Img Content------------------------- */}
