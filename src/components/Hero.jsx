@@ -79,11 +79,11 @@ function Hero() {
               {/* -----------------------Img Content------------------------- */}
             </div>
           </div>
-          <div className="mt-10 basis-1/3 sm:mt-0">
+          {/* <div className="mt-10 basis-1/3 sm:mt-0">
             <figure className="flex items-center justify-center">
               <img src={heroImg} alt="" />
             </figure>
-          </div>
+          </div> */}
           {/* -----------------------right Content (statistiques)------------------------- */}
           <div className="md:basis-1/5 flex justify-between text-center mt-10 flex-wrap gap-[3px] md:mt-0 md:flex-col md:justify-end md:text-end ">
             <div className="mb-10">

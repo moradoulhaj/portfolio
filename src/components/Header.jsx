@@ -25,7 +25,10 @@ function Header() {
               <ul className="flex items-center gap-10">
                 {navLinks.map((link, key) => (
                   <li key={key}>
-                    <a href={`#${link.path}`} className="text-txt font-[600] hover:border-b-primary border-b-2">
+                    <a
+                      href={`#${link.path}`}
+                      className="text-txt font-[600] hover:border-b-primary border-b-2"
+                    >
                       {link.name}
                     </a>
                   </li>
@@ -44,7 +47,11 @@ function Header() {
                 className="text-2xl text-txt md:hidden cursor-pointer"
                 onClick={() => setIsOpen(!isOpen)}
               >
-                {isOpen ? <i className="ri-close-line"></i> : <i className="ri-menu-line"></i>}
+                {isOpen ? (
+                  <i className="ri-close-line"></i>
+                ) : (
+                  <i className="ri-menu-line"></i>
+                )}
               </span>
             </div>
           </div>
@@ -57,7 +64,10 @@ function Header() {
           <ul className="flex flex-col items-start gap-2 p-4">
             {navLinks.map((link, key) => (
               <li key={key}>
-                <a href={`#${link.path}`} className="text-txt font-[600] hover:border-b-primary border-b-2">
+                <a
+                  href={`#${link.path}`}
+                  className="text-txt font-[600] hover:border-b-primary border-b-2"
+                >
                   {link.name}
                 </a>
               </li>
