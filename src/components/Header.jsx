@@ -37,12 +37,14 @@ function Header() {
             </div>
             {/* -----------------------Menu Right and Contact Me------------------------- */}
             <div className="flex items-center gap-4">
-              <button
-                className="flex items-center gap-2 border border-solid text-txt font-[600] border-txt px-4 py-2 rounded-[8px] max-h-[40px] 
+              <a href="#contact">
+                <button
+                  className="flex items-center gap-2 border border-solid text-txt font-[600] border-txt px-4 py-2 rounded-[8px] max-h-[40px] 
                 hover:bg-txt hover:text-white hover:font-[500] ease-in duration-300"
-              >
-                <i className="ri-send-plane-line"></i> Contact Me
-              </button>
+                >
+                  <i className="ri-send-plane-line"></i> Contact Me
+                </button>
+              </a>
               <span
                 className="text-2xl text-txt md:hidden cursor-pointer"
                 onClick={() => setIsOpen(!isOpen)}

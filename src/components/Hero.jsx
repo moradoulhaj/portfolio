@@ -48,9 +48,10 @@ function Hero() {
               <span>
                 <i className="ri-apps-2-line"></i>
               </span>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s
+              I create user-friendly and visually appealing web applications
+              with modern technologies, specializing in crafting responsive and
+              dynamic solutions for diverse needs. Combining creativity and
+              technology.
             </p>
             <div className="flex items-center gap-9 mt-14">
               <span className="text-[15px] font-[600] text-txt">
