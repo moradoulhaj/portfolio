@@ -2,6 +2,7 @@ import React from "react";
 import frontEndImg from "../assets/images/front-end.png";
 import backEndImg from "../assets/images/backend.png";
 import designImg from "../assets/images/design.png";
+import appsImg from "../assets/images/apps.png";
 
 function Services() {
   return (
@@ -12,10 +13,9 @@ function Services() {
             What can I do for you:
           </h2>
           <p className=" lg:max-w-[600px] lg:mx-auto text-secondary font-[500] text-[16px] leading-7">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s orem Ipsum is simply dummy text of the printing
-            and typesetting industry.
+            I offer a range of services to help you achieve your digital goals.
+            Whether you need a sleek front-end, robust back-end, or a seamless
+            UI/UX design, I've got you covered.
           </p>
         </div>
         <div className="flex flex-col justify-center sm:py-12">
@@ -38,15 +38,15 @@ function Services() {
                           Frontend development
                         </h3>
                         <p className="text-[15px] text-txt group-hover:text-white group-hover:font-[500]">
-                          Lorem Ipsum is simply dummy text of typesetting
-                          industry. Lorem Ipsum industry's
+                          Creating responsive, user-friendly, and visually
+                          appealing interfaces using modern technologies.
                         </p>
                       </div>
                     </div>
                   </div>
                   <div className=" rounded-full bg-primary border-white border-4 w-10 h-10 absolute left-1/2 transform -translate-x-1/2 -translate-y-4 sm:translate-y-0 flex items-center justify-center">
                     <figure>
-                      <img src={frontEndImg} alt="" srcset="" />
+                      <img src={frontEndImg} alt="" />
                     </figure>
                   </div>
                 </div>
@@ -67,15 +67,15 @@ function Services() {
                           Backend development
                         </h3>
                         <p className="text-[15px] text-txt group-hover:text-white group-hover:font-[500]">
-                          Lorem Ipsum is simply dummy text of typesetting
-                          industry. Lorem Ipsum industry's
+                          Building scalable and efficient server-side
+                          applications to support your business needs.
                         </p>
                       </div>
                     </div>
                   </div>
                   <div className=" rounded-full bg-primary border-white border-4 w-10 h-10 absolute left-1/2 transform -translate-x-1/2 -translate-y-4 sm:translate-y-0 flex items-center justify-center">
                     <figure>
-                      <img src={backEndImg} alt="" srcset="" />
+                      <img src={backEndImg} alt="" />
                     </figure>
                   </div>
                 </div>
@@ -97,15 +97,15 @@ function Services() {
                           UI/UX design
                         </h3>
                         <p className="text-[15px] text-txt group-hover:text-white group-hover:font-[500]">
-                          Lorem Ipsum is simply dummy text of typesetting
-                          industry. Lorem Ipsum industry's
+                          Designing intuitive and engaging user interfaces that
+                          provide a seamless user experience.
                         </p>
                       </div>
                     </div>
                   </div>
                   <div className=" rounded-full bg-primary border-white border-4 w-10 h-10 absolute left-1/2 transform -translate-x-1/2 -translate-y-4 sm:translate-y-0 flex items-center justify-center">
                     <figure>
-                      <img src={designImg} alt="" srcset="" />
+                      <img src={designImg} alt="" />
                     </figure>
                   </div>
                 </div>
@@ -113,7 +113,7 @@ function Services() {
 
               {/* -----------------------Right Card------------------------ */}
 
-              <div className="mt-6 sm:mt-0 sm:mb-12">
+              {/* <div className="mt-6 sm:mt-0 sm:mb-12">
                 <div className="flex items-center flex-col sm:flex-row">
                   <div className="flex justify-end w-full mx-auto items-center">
                     <div className="w-full sm:w-1/2 sm:pl-8">
@@ -124,22 +124,21 @@ function Services() {
                         className="bg-white p-4 rounded shadow group hover:bg-primary cursor-pointer ease-in duration-150 "
                       >
                         <h3 className="text-primary font-[700] mb-3 group-hover:text-white group-hover:font-[600] text-xl">
-                          Backend development
+                          Application Development
                         </h3>
                         <p className="text-[15px] text-txt group-hover:text-white group-hover:font-[500]">
-                          Lorem Ipsum is simply dummy text of typesetting
-                          industry. Lorem Ipsum industry's
+                         Developing robust and scalable applications tailored to your specific business requirements.
                         </p>
                       </div>
                     </div>
                   </div>
                   <div className=" rounded-full bg-primary border-white border-4 w-10 h-10 absolute left-1/2 transform -translate-x-1/2 -translate-y-4 sm:translate-y-0 flex items-center justify-center">
                     <figure>
-                      <img src={backEndImg} alt="" srcset="" />
+                      <img src={backEndImg} alt="" />
                     </figure>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

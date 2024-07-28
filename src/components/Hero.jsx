@@ -30,7 +30,7 @@ function Hero() {
             >
               <a href="#contact">
                 <button className="bg-primary text-white font-[500] flex items-center gap-2 hover:bg-txt py-2 px-4 rounded-[8px] ease-in duration-300">
-                  <i class="ri-mail-line"></i>Hire me
+                  <i className="ri-mail-line"></i>Hire me
                 </button>
               </a>
               <a
@@ -46,11 +46,12 @@ function Hero() {
               className="flex text-secondary text-[15px] gap-2 mt-14 font-[500] sm:pl-14 sm:pr-10 leading-7"
             >
               <span>
-                <i class="ri-apps-2-line"></i>
+                <i className="ri-apps-2-line"></i>
               </span>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s
+              I create user-friendly and visually appealing web applications
+              with modern technologies, specializing in crafting responsive and
+              dynamic solutions for diverse needs. Combining creativity and
+              technology.
             </p>
             <div className="flex items-center gap-9 mt-14">
               <span className="text-[15px] font-[600] text-txt">
@@ -58,35 +59,35 @@ function Hero() {
               </span>
               <span>
                 <a href="text-[18px] font-[600] text-txt">
-                  <i class="ri-linkedin-fill"></i>
+                  <i className="ri-linkedin-fill"></i>
                 </a>
               </span>
               <span>
                 <a href="text-[18px] font-[600] text-txt">
-                  <i class="ri-github-fill"></i>
+                  <i className="ri-github-fill"></i>
                 </a>
               </span>
               <span>
                 <a href="text-[18px] font-[600] text-txt">
-                  <i class="ri-telegram-fill"></i>
+                  <i className="ri-telegram-fill"></i>
                 </a>
               </span>
               <span>
                 <a href="text-[18px] font-[600] text-txt">
-                  <i class="ri-instagram-fill"></i>
+                  <i className="ri-instagram-fill"></i>
                 </a>
               </span>
               {/* -----------------------Img Content------------------------- */}
             </div>
           </div>
-          <div className="mt-10 basis-1/3 sm:mt-0">
+          {/* <div className="mt-10 basis-1/3 sm:mt-0">
             <figure className="flex items-center justify-center">
               <img src={heroImg} alt="" />
             </figure>
-          </div>
+          </div> */}
           {/* -----------------------right Content (statistiques)------------------------- */}
-          <div className="md:basis-1/5 flex justify-between text-center mt-10 flex-wrap gap-[3px] md:mt-0 md:flex-col md:justify-end md:text-end ">
-            <div className="mb-10">
+          <div className="md:basis-1/3 flex justify-between text-center mt-10 flex-wrap gap-[3px] md:mt-0 md:flex-col md:justify-end md:text-end ">
+            <div className="my-10">
               <h2 className="text-secondary font-[700] text-[32px]">
                 <CountUp start={0} end={1} duration={3} suffix="+" />
               </h2>
@@ -94,7 +95,7 @@ function Hero() {
                 Years of Experience
               </h4>
             </div>
-            <div className="mb-10">
+            <div className="my-10">
               <h2 className="text-secondary font-[700] text-[32px]">
                 <CountUp start={0} end={5} duration={3} suffix="+" />
               </h2>
@@ -102,22 +103,22 @@ function Hero() {
                 Projects Completed
               </h4>
             </div>
-            <div className="mb-10">
+            <div className="my-10">
               <h2 className="text-secondary font-[700] text-[32px]">
-                <CountUp start={0} end={5} duration={3} suffix="+" />
+                <CountUp start={0} end={100} duration={3} suffix="%" />
               </h2>
               <h4 className="text-secondary font-[600] text-[18px]">
                 Success Rate
               </h4>
             </div>
-            <div className="mb-10">
+            {/* <div className="mb-10">
               <h2 className="text-secondary font-[700] text-[32px]">
                 <CountUp start={0} end={5} duration={3} suffix="+" />
               </h2>
               <h4 className="text-secondary font-[600] text-[18px]">
                 Years of Experience
               </h4>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
