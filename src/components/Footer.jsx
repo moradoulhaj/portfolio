@@ -23,8 +23,8 @@ function Footer() {
           </div>
           <div className="w-full sm:w-1/2">
             <p className="text-gray-300 mt-4 leading-7 sm:mt-0">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy te
+              Thank you for visiting my portfolio. If you have any questions or
+              would like to discuss a project, feel free to reach out.
             </p>
             <div className="flex items-center gap-4 flex-wrap md:gap-8 mt-10">
               <span className="font-[600] text-[15px] text-gray-300">

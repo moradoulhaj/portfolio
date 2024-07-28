@@ -86,8 +86,8 @@ function Hero() {
             </figure>
           </div> */}
           {/* -----------------------right Content (statistiques)------------------------- */}
-          <div className="md:basis-1/5 flex justify-between text-center mt-10 flex-wrap gap-[3px] md:mt-0 md:flex-col md:justify-end md:text-end ">
-            <div className="mb-10">
+          <div className="md:basis-1/3 flex justify-between text-center mt-10 flex-wrap gap-[3px] md:mt-0 md:flex-col md:justify-end md:text-end ">
+            <div className="my-10">
               <h2 className="text-secondary font-[700] text-[32px]">
                 <CountUp start={0} end={1} duration={3} suffix="+" />
               </h2>
@@ -95,7 +95,7 @@ function Hero() {
                 Years of Experience
               </h4>
             </div>
-            <div className="mb-10">
+            <div className="my-10">
               <h2 className="text-secondary font-[700] text-[32px]">
                 <CountUp start={0} end={5} duration={3} suffix="+" />
               </h2>
@@ -103,22 +103,22 @@ function Hero() {
                 Projects Completed
               </h4>
             </div>
-            <div className="mb-10">
+            <div className="my-10">
               <h2 className="text-secondary font-[700] text-[32px]">
-                <CountUp start={0} end={5} duration={3} suffix="+" />
+                <CountUp start={0} end={100} duration={3} suffix="%" />
               </h2>
               <h4 className="text-secondary font-[600] text-[18px]">
                 Success Rate
               </h4>
             </div>
-            <div className="mb-10">
+            {/* <div className="mb-10">
               <h2 className="text-secondary font-[700] text-[32px]">
                 <CountUp start={0} end={5} duration={3} suffix="+" />
               </h2>
               <h4 className="text-secondary font-[600] text-[18px]">
                 Years of Experience
               </h4>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
