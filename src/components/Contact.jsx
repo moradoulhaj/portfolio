@@ -1,7 +1,32 @@
-import React from "react";
-import handSvg from "../assets/images/Hand.png"
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import handSvg from "../assets/images/Hand.png";
 
 function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_ja9ylji",
+        "template_4smwgze",
+        form.current,
+        import.meta.env.VITE_APP_API
+      )
+      .then(
+        (result) => {
+          console.log("SUCCESS!", result.text);
+          alert("Message sent successfully!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+          alert("Failed to send message. Please try again.");
+        }
+      );
+  };
+
   return (
     <section id="contact" className="pb-16">
       <div className="container">
@@ -13,27 +38,30 @@ function Contact() {
             <img src={handSvg} alt=""  width={500} />
             ---------------------Imaaaaaaaaaaage here----------------------
           </div> */}
-          <div className="w-full mt-8 md:mt-0 lg:w-1/2 sm:h-[450px] lg:flex  items-center bg-indigo-100 px-4 py-8 lg:px-8">
-            <form action="" className="w-full">
+          <div className="w-full mt-8 md:mt-0 lg:w-1/2 sm:h-[450px] lg:flex items-center bg-indigo-100 px-4 py-8 lg:px-8">
+            <form ref={form} onSubmit={sendEmail} className="w-full">
               <div className="mb-5">
                 <input
                   type="text"
+                  name="from_name"
                   className="w-full p-3 rounded-[5px] focus:outline-none"
-                  placeholder="Enter you name"
+                  placeholder="Enter your name"
                   required
                 />
               </div>
               <div className="mb-5">
                 <input
                   type="email"
+                  name="from_email"
                   className="w-full p-3 rounded-[5px] focus:outline-none"
-                  placeholder="Enter you email"
+                  placeholder="Enter your email"
                   required
                 />
               </div>
               <div className="mb-5">
                 <input
                   type="text"
+                  name="subject"
                   className="w-full p-3 rounded-[5px] focus:outline-none"
                   placeholder="Subject"
                   required
@@ -42,7 +70,7 @@ function Contact() {
               <div className="mb-5">
                 <textarea
                   rows={3}
-                  type="text"
+                  name="message"
                   className="w-full p-3 rounded-[5px] focus:outline-none"
                   placeholder="Write your message"
                   required
