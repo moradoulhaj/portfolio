@@ -8,7 +8,12 @@ function Contact() {
     e.preventDefault();
 
     emailjs
-      .sendForm("service_ja9ylji", "template_4smwgze", form.current, "YOUR_PUBLIC_KEY")
+      .sendForm(
+        "service_ja9ylji",
+        "template_4smwgze",
+        form.current,
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+      )
       .then(
         (result) => {
           console.log("SUCCESS!", result.text);
