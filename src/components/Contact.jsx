@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
 import handSvg from "../assets/images/Hand.png";
 
 function Contact() {
@@ -9,12 +8,7 @@ function Contact() {
     e.preventDefault();
 
     emailjs
-      .sendForm(
-        "service_ja9ylji",
-        "template_4smwgze",
-        form.current,
-        import.meta.env.VITE_APP_API
-      )
+      .sendForm("service_ja9ylji", "template_4smwgze", form.current, "YOUR_PUBLIC_KEY")
       .then(
         (result) => {
           console.log("SUCCESS!", result.text);
@@ -34,10 +28,6 @@ function Contact() {
           Get in touch
         </h2>
         <div className="md:flex justify-center items-center">
-          {/* <div className="w-full md:w-1/2 h-[300px] sm:h-[450px]">
-            <img src={handSvg} alt=""  width={500} />
-            ---------------------Imaaaaaaaaaaage here----------------------
-          </div> */}
           <div className="w-full mt-8 md:mt-0 lg:w-1/2 sm:h-[450px] lg:flex items-center bg-indigo-100 px-4 py-8 lg:px-8">
             <form ref={form} onSubmit={sendEmail} className="w-full">
               <div className="mb-5">
