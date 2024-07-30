@@ -11,7 +11,7 @@ function Contact() {
     emailjs
       .sendForm(
         "service_ja9ylji",
-        "template_4smwgze",
+        "template_ie33rqf",
         form.current,
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
