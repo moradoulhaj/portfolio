@@ -17,15 +17,20 @@ function Contact() {
     const now = Date.now();
     if (now < cooldownUntil) {
       const remainingTime = Math.ceil((cooldownUntil - now) / 1000);
-      if (!toast.isActive('cooldown-toast')) {
-        toast.warn(`Please wait ${remainingTime} seconds before trying again.`, { toastId: 'cooldown-toast' });
+      if (!toast.isActive("cooldown-toast")) {
+        toast.warn(
+          `Please wait ${remainingTime} seconds before trying again.`,
+          { toastId: "cooldown-toast" }
+        );
       }
       return;
     }
 
     if (isSent) {
-      if (!toast.isActive('already-sent-toast')) {
-        toast.warn("You have already sent a message.", { toastId: 'already-sent-toast' });
+      if (!toast.isActive("already-sent-toast")) {
+        toast.warn("You have already sent a message.", {
+          toastId: "already-sent-toast",
+        });
       }
       return;
     }
@@ -39,20 +44,25 @@ function Contact() {
         form.current,
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       );
-      toast.success("Message sent successfully!", { toastId: 'success-toast' });
+      toast.success("Message sent successfully!", { toastId: "success-toast" });
       setIsSent(true); // Set flag to true after successful send
     } catch (error) {
       setAttempts((prevAttempts) => {
         const newAttempts = prevAttempts + 1;
         if (newAttempts >= MAX_ATTEMPTS) {
-          if (!toast.isActive('max-attempts-toast')) {
-            toast.error("You have reached the maximum number of attempts. Please wait before trying again.", { toastId: 'max-attempts-toast' });
+          if (!toast.isActive("max-attempts-toast")) {
+            toast.error(
+              "You have reached the maximum number of attempts. Please wait before trying again.",
+              { toastId: "max-attempts-toast" }
+            );
           }
           setCooldownUntil(now + COOLDOWN_TIME); // Set cooldown period
           return 0; // Reset attempts after cooldown
         } else {
-          if (!toast.isActive('error-toast')) {
-            toast.error("Failed to send message. Please try again.", { toastId: 'error-toast' });
+          if (!toast.isActive("error-toast")) {
+            toast.error("Failed to send message. Please try again.", {
+              toastId: "error-toast",
+            });
           }
           return newAttempts;
         }
@@ -115,7 +125,13 @@ function Contact() {
                   className="bg-txt mt-3 focus:outline-none text-white w-full p-3 rounded-[5px] text-center hover:bg-secondary ease-linear duration-150"
                   disabled={isSubmitting || isSent} // Disable button if submitting or email sent
                 >
-                  {isSubmitting ? "Sending..." : isSent ? "Message Sent" : "Send Message"}
+                  {isSubmitting ? (
+                    <i class="ri-loader-line ri-spin"></i>
+                  ) : isSent ? (
+                    <i class="ri-mail-check-fill"></i>
+                  ) : (
+                    "Send Message"
+                  )}
                 </button>
               </div>
             </form>
