@@ -128,7 +128,7 @@ function Contact() {
                   {isSubmitting ? (
                     <i class="ri-loader-line ri-spin"></i>
                   ) : isSent ? (
-                    <i class="ri-mail-check-fill"></i>
+                    <i class="ri-mail-check-fill text-[21px]"></i>
                   ) : (
                     "Send Message"
                   )}
