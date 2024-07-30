@@ -1,12 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import handSvg from "../assets/images/Hand.png";
+import { ToastContainer, toast } from "react-toastify";
 
 function Contact() {
   const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     emailjs
       .sendForm(
@@ -17,12 +19,12 @@ function Contact() {
       )
       .then(
         (result) => {
-          console.log("SUCCESS!", result.text);
-          alert("Message sent successfully!");
+          toast.success("Message sent successfully!");
+          setIsSubmitting(false);
         },
         (error) => {
-          console.log("FAILED...", error.text);
-          alert("Failed to send message. Please try again.");
+          toast.error("Failed to send message. Please try again.");
+          setIsSubmitting(false);
         }
       );
   };
@@ -74,14 +76,16 @@ function Contact() {
                 <button
                   type="submit"
                   className="bg-txt mt-3 focus:outline-none text-white w-full p-3 rounded-[5px] text-center hover:bg-secondary ease-linear duration-150"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
               </div>
             </form>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 }

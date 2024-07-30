@@ -5,6 +5,9 @@ import './index.css'
 import 'aos/dist/aos.css'
 import 'remixicon/fonts/remixicon.css'
 import '@emailjs/browser'
+import "react-toastify/dist/ReactToastify.css";
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
