@@ -5,28 +5,61 @@ import { ToastContainer, toast } from "react-toastify";
 function Contact() {
   const form = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSent, setIsSent] = useState(false); // Track if email has been sent
+  const [attempts, setAttempts] = useState(0);
+  const MAX_ATTEMPTS = 3; // Maximum number of attempts before cooldown
+  const COOLDOWN_TIME = 30000; // Cooldown time in milliseconds (e.g., 30 seconds)
+  const [cooldownUntil, setCooldownUntil] = useState(0);
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
+
+    const now = Date.now();
+    if (now < cooldownUntil) {
+      const remainingTime = Math.ceil((cooldownUntil - now) / 1000);
+      if (!toast.isActive('cooldown-toast')) {
+        toast.warn(`Please wait ${remainingTime} seconds before trying again.`, { toastId: 'cooldown-toast' });
+      }
+      return;
+    }
+
+    if (isSent) {
+      if (!toast.isActive('already-sent-toast')) {
+        toast.warn("You have already sent a message.", { toastId: 'already-sent-toast' });
+      }
+      return;
+    }
+
     setIsSubmitting(true);
 
-    emailjs
-      .sendForm(
+    try {
+      await emailjs.sendForm(
         "service_ja9ylji",
         "template_ie33rqf",
         form.current,
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        (result) => {
-          toast.success("Message sent successfully!");
-          setIsSubmitting(false);
-        },
-        (error) => {
-          toast.error("Failed to send message. Please try again.");
-          setIsSubmitting(false);
-        }
       );
+      toast.success("Message sent successfully!", { toastId: 'success-toast' });
+      setIsSent(true); // Set flag to true after successful send
+    } catch (error) {
+      setAttempts((prevAttempts) => {
+        const newAttempts = prevAttempts + 1;
+        if (newAttempts >= MAX_ATTEMPTS) {
+          if (!toast.isActive('max-attempts-toast')) {
+            toast.error("You have reached the maximum number of attempts. Please wait before trying again.", { toastId: 'max-attempts-toast' });
+          }
+          setCooldownUntil(now + COOLDOWN_TIME); // Set cooldown period
+          return 0; // Reset attempts after cooldown
+        } else {
+          if (!toast.isActive('error-toast')) {
+            toast.error("Failed to send message. Please try again.", { toastId: 'error-toast' });
+          }
+          return newAttempts;
+        }
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -45,6 +78,7 @@ function Contact() {
                   className="w-full p-3 rounded-[5px] focus:outline-none"
                   placeholder="Enter your name"
                   required
+                  disabled={isSubmitting || isSent} // Disable input if submitting or email sent
                 />
               </div>
               <div className="mb-5">
@@ -54,6 +88,7 @@ function Contact() {
                   className="w-full p-3 rounded-[5px] focus:outline-none"
                   placeholder="Enter your email"
                   required
+                  disabled={isSubmitting || isSent} // Disable input if submitting or email sent
                 />
               </div>
               <div className="mb-5">
@@ -63,6 +98,7 @@ function Contact() {
                   className="w-full p-3 rounded-[5px] focus:outline-none"
                   placeholder="Subject"
                   required
+                  disabled={isSubmitting || isSent} // Disable input if submitting or email sent
                 />
               </div>
               <div className="mb-5">
@@ -72,13 +108,14 @@ function Contact() {
                   className="w-full p-3 rounded-[5px] focus:outline-none"
                   placeholder="Write your message"
                   required
+                  disabled={isSubmitting || isSent} // Disable textarea if submitting or email sent
                 />
                 <button
                   type="submit"
                   className="bg-txt mt-3 focus:outline-none text-white w-full p-3 rounded-[5px] text-center hover:bg-secondary ease-linear duration-150"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || isSent} // Disable button if submitting or email sent
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? "Sending..." : isSent ? "Message Sent" : "Send Message"}
                 </button>
               </div>
             </form>
