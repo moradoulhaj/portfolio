@@ -9,7 +9,7 @@ function Services() {
     <section id="services">
       <div className="container lg:pt-5">
         <div className="text-center">
-          <h2 className="text-secondary font-[800] text-[2.4rem] mb-5">
+          <h2 className="text-secondary font-[800] text-[2.4rem] mb-5 ">
             What can I do for you:
           </h2>
           <p className=" lg:max-w-[600px] lg:mx-auto text-secondary font-[500] text-[16px] leading-7">

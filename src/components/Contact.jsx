@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
+import contactImg from "../assets/images/contact.png";
 
 function Contact() {
   const form = useRef();
@@ -78,7 +79,10 @@ function Contact() {
         <h2 className="mb-8 text-secondary font-[700] text-[2.5rem] text-center">
           Get in touch
         </h2>
-        <div className="md:flex justify-center items-center">
+        <div className="md:flex justify-center items-center ">
+          <div className="w-full md:w-1/3  sm:h-[450px] bg-indigo-100">
+            <img src={contactImg} alt="" srcset="" className="" />
+          </div>
           <div className="w-full mt-8 md:mt-0 lg:w-1/2 sm:h-[450px] lg:flex items-center bg-indigo-100 px-4 py-8 lg:px-8">
             <form ref={form} onSubmit={sendEmail} className="w-full">
               <div className="mb-5">
