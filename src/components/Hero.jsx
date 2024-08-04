@@ -80,7 +80,7 @@ function Hero() {
               {/* -----------------------Img Content------------------------- */}
             </div>
           </div>
-          {/* <div className="mt-10 basis-1/3 sm:mt-0">
+           {/* <div className="mt-10 basis-1/3 sm:mt-0">
             <figure className="flex items-center justify-center">
               <img src={heroImg} alt="" />
             </figure>
